@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.date = "2016-04-18"
 
   # Gem Details
-	s.name = "core-sass"
+  s.name = "sass-core"
 	s.authors = ["Edgar Ravenhorst"]
 	s.summary = %q{A very handy styling/templating collection for compass}
 	s.description = %q{A very handy styling/templating collection for compass}
