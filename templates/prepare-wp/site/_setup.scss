@@ -1,0 +1,6 @@
+// menu styling
+@include wp-core-menu(horizontal, fadeIn);
+
+header button.toggle-menu-button {
+	float:right;
+}

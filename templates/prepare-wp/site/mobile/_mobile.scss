@@ -1,0 +1,14 @@
+// var
+$mobile-width: 768px;
+
+// mixins
+@mixin mobile {
+  @media (max-width: #{$mobile-width}){
+    @content;
+  }
+}
+
+// include
+@include tablet {
+  font-size: 18px;
+}

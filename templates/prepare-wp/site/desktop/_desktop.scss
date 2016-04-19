@@ -1,0 +1,14 @@
+// var
+$desktop-width: 768px;
+
+// mixins
+@mixin desktop {
+  @media (min-width: #{$desktop-width}){
+    @content;
+  }
+}
+
+// include
+@include desktop {
+  font-size: 18px;
+}

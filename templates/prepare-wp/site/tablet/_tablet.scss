@@ -1,0 +1,14 @@
+// var
+$tablet-width: 768px;
+
+// mixins
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+// include
+@include tablet {
+  font-size: 18px;
+}
