@@ -1,6 +1,8 @@
-@import 'sass-core-wp';
-
+@import 'sass-core/settings';
+@import 'sass-core/settings/wp';
 @import 'site/settings';
+
+@import 'sass-core/wp-setup';
 @import 'site/setup';
 
 @import 'site/mobile/mobile';

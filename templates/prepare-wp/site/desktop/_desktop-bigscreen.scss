@@ -1,0 +1,11 @@
+// mixins
+@mixin bigscreen {
+  @media (min-width: #{$tablet-width}){
+    @content;
+}
+}
+
+// include
+@include bigscreen {
+  font-size: 18px;
+}

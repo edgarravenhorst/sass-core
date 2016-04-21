@@ -1,6 +1,10 @@
-@import "settings/buttons";
+//Vendor
+@import 'compass';
+
+//Own
 @import "settings/colors";
 @import "settings/content";
+@import "settings/buttons";
 @import "settings/forms";
+@import "settings/contextual-headings";
 @import "settings/responsiveness";
-@import "settings/forms";

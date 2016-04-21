@@ -2,5 +2,34 @@
 @include wp-core-menu(horizontal, fadeIn);
 
 header button.toggle-menu-button {
-	float:right;
+  float:right;
+}
+
+body.page-id-62{
+
+  p{
+    @include centerElement("both");
+  }
+
+  div.visible{
+    color: white;
+    background: red;
+    @include hideElement("visible");
+    @include centerElement("both");
+    @include single-transition(all, 0.3s);
+    padding: 40px;
+    margin-top: 200px;
+
+    &:hover{
+      @include hideElement("hidden");
+    }
+  }
+
+  div.icon{
+    @include icon();
+  }
+
+  //button{
+  //  @include absolute(10px, 10px, 10px, 10px);
+  //}
 }

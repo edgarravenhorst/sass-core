@@ -5,14 +5,13 @@ $font2: 'Roboto', sans-serif;
 $font3: $font2;
 $font4: $font2;
 
-/basic setup
+//basic setup
 $body-color: #fff;
-$base_font_size: 13px;
-$base_text_color: #444;
-//$base_line_height: 24px;
+$base_font_size: 16px;
 $base_line_height: 20px;
 $base_font:$font2;
 $base_font_weight: 300;
+$base_text_color: #444;
 
 //basic link
 $link_decoration: underline;

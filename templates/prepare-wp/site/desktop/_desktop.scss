@@ -1,11 +1,8 @@
-// var
-$desktop-width: 768px;
-
 // mixins
 @mixin desktop {
-  @media (min-width: #{$desktop-width}){
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
-  }
+}
 }
 
 // include

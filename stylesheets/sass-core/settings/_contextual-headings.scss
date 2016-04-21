@@ -1,0 +1,9 @@
+$step-size-heading: 0.33333; // Met hoeveel x moet de volgende heading verkleind worden
+$amplifier-heading: 2.5; // Wat is de schaalfactor?
+
+$context-font: ( // In welke factor gaat elk element om met schalen
+  header: 1,
+  article: 1,
+  footer: 0.5,
+  aside: 0.33
+);

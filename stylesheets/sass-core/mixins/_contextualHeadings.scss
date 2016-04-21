@@ -1,0 +1,3 @@
+@mixin heading-size($size) {
+  font-size: $size * $step-size-heading * $amplifier-heading + em;
+}
