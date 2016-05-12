@@ -1,88 +1,69 @@
-@mixin wp-core-menu ($type, $typemobile, $selector: "header nav .menu") {
+@import "desktop/basic-menu";
+
+@import "desktop/submenu-dropdown";
+@import "desktop/submenu-widefat";
+
+@import "mobile/fadeIn";
+@import "mobile/slideIn";
+
+@mixin wp-core-menu ($selector: "header nav", $type:basic, $submenu-type:dropdown, $type-mobile:slideIn, $mobile-submenu-type:slideOut) {
 
 	#{$selector} {
 		margin:0;
 		padding:0;
 		list-style: none;
-	}
 
-	//mobile menu
-	@media screen and (max-width: 782px) {
-		#{$selector} {
-			background-color: lightgreen;
-
-			@if $typemobile == aside {
-				position: fixed;
-				left:0;
-				top:0;
-				width:90%;
-				height:100%;
-				max-width: 300px;
-				background:#222;
-				@include translateX(-100%);
-//				@include single-transition(all, 0.3s);
-				box-sizing: border-box;
-				padding:5%;
-
-				li, .menu-item {
-					padding:15px;
-					width:100%;
-					box-sizing: border-box;
-					text-align: left;
-					a{
-						color:#fff;
-					}
-				}
-				&.visible {
-					@include translateX(0%);
-				}
-			}
-
-			@if $typemobile == fadeIn {
-				position: fixed;
-				left:0;
-				top:0;
-				width:100%;
-				height:100%;
-				background:#222;
-//				@include single-transition(all, 0.3s);
-				visibility: hidden;
-				opacity: 0;
-				box-sizing: border-box;
-				padding-top:60px;
-
-				li, .menu-item {
-					padding:15px;
-					width:100%;
-					box-sizing: border-box;
-					text-align: center;
-					a{
-						color:#fff;
-					}
-				}
-
-				&.visible {
-					visibility: visible;
-					opacity: 1;
-				}
-			}
+		.close{
+			color: #999;
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 0px;
+			line-height: 0;
+			width: 50px;
+			height: 50px;
+			display: none;
+			border: 0;
+			font-size: 30px;
+			background: transparent;
 		}
-	}
 
-	//desktop menu
-	@media screen and (min-width: 782px) {
-		#{$selector} {
-			margin:0;
-			padding:0;
-			list-style: none;
+		//======================================================================
+		// MAIN STUFF
+		//======================================================================
 
-			@if $type == horizontal {
-				li, .menu-item{
-					float:right;
-					display: inline-block;
-					margin: 0 5px;
-				}
+		@include tablet {
+			//main menu
+			//-----------------------
+			@if $type == basic {
+				@include basic-menu(horizontal);
 			}
+
+			//submenu's
+			//-----------------------
+			@if $submenu-type == dropdown {
+				@include submenu-dropdown();
+			}
+
+			@if $submenu-type == widefat {
+				@include submenu-widefat();
+			}
+
+		}
+		//======================================================================
+		// MOBILE STUFF
+		//======================================================================
+		@include mobile {
+
+			@if $type-mobile == slideIn {
+				@include mobile-menu-slideIn();
+			}
+
+			@if $type-mobile == fadeIn {
+				@include mobile-menu-fadeIn();
+			}
+
+
 		}
 	}
 }

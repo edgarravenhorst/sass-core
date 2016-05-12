@@ -1,9 +1,4 @@
 $max-page-width: 1115px;
-//$screen-size-mobile: 0px;
-//$screen-size-tablet: 790px;
-$screen-size-tablet-landscape: 1020px;
-//$screen-size-desktop: 1280px;
-//$screen-size-bigscreen: 1500px;
 
 //Mobile
 $mobile-width: 0px;
@@ -15,3 +10,28 @@ $tablet-landscape-width: 1020px;
 //Desktop
 $desktop-width: 1280px;
 $bigscreen-width: 1500px;
+
+// mixins
+@mixin mobile {
+	@media (max-width:$tablet-width){
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width:$tablet-width) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $desktop-width) {
+		@content;
+	}
+}
+
+@mixin bigscreen {
+	@media (min-width: $bigscreen-width){
+		@content;
+	}
+}
