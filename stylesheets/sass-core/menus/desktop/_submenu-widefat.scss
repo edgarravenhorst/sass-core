@@ -1,4 +1,4 @@
-@mixin submenu-widefat($selector:"ul ul, .submenu, .sub-menu"){
+@mixin submenu-widefat($selector:".sub-menu"){
 
 
 	#{$selector} {
@@ -14,15 +14,7 @@
 		border: 1px solid #dfdfdf;
 		padding: 25px;
 		box-sizing: border-box;
-		height:325px;
-
-		-webkit-columns: 100px 3; /* Chrome, Safari, Opera */
-		-moz-columns: 100px 3; /* Firefox */
-		columns: 100px 3;
-
-		-webkit-column-rule: 1px outset #ccc; /* Chrome, Safari, Opera */
-		-moz-column-rule: 1px outset #ccc; /* Firefox */
-		column-rule: 1px outset #ccc;
+		height:225px;
 
 		li{
 			position: relative;
@@ -42,10 +34,6 @@
 			&:first-child{
 				border-top:0;
 			}
-		}
-
-		ul{
-			display:none;
 		}
 
 		&.visible{
