@@ -6,64 +6,71 @@
 @import "mobile/fadeIn";
 @import "mobile/slideIn";
 
-@mixin wp-core-menu ($selector: "header nav", $type:basic, $submenu-type:dropdown, $type-mobile:slideIn, $mobile-submenu-type:slideOut) {
+@import "mobile/submenu-slideover";
 
-	#{$selector} {
-		margin:0;
-		padding:0;
-		list-style: none;
+@mixin wp-core-menu ($selector: "header nav", $type:basic, $submenu-type:dropdown, $type-mobile:slideIn, $mobile-submenu-type:slideOver) {
 
-		.close{
-			color: #999;
-			position: absolute;
-			right: 0;
-			top: 0;
-			padding: 0px;
-			line-height: 0;
-			width: 50px;
-			height: 50px;
-			display: none;
-			border: 0;
-			font-size: 30px;
-			background: transparent;
-		}
+  #{$selector} {
+    margin:0;
+    padding:0;
+    list-style: none;
 
-		//======================================================================
-		// MAIN STUFF
-		//======================================================================
+    .close{
+      color: #999;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0px;
+      line-height: 0;
+      width: 50px;
+      height: 50px;
+      display: none;
+      border: 0;
+      font-size: 30px;
+      background: transparent;
+    }
 
-		@include tablet {
-			//main menu
-			//-----------------------
-			@if $type == basic {
-				@include basic-menu(horizontal);
-			}
+    //======================================================================
+    // MAIN STUFF
+    //======================================================================
 
-			//submenu's
-			//-----------------------
-			@if $submenu-type == dropdown {
-				@include submenu-dropdown();
-			}
+    @include tablet {
+      //main menu
+      //-----------------------
+      @if $type == basic {
+        @include basic-menu(horizontal);
+      }
 
-			@if $submenu-type == widefat {
-				@include submenu-widefat();
-			}
+      //submenu's
+      //-----------------------
+      @if $submenu-type == dropdown {
+        @include submenu-dropdown();
+      }
 
-		}
-		//======================================================================
-		// MOBILE STUFF
-		//======================================================================
-		@include mobile {
+      @if $submenu-type == widefat {
+        @include submenu-widefat();
+      }
 
-			@if $type-mobile == slideIn {
-				@include mobile-menu-slideIn();
-			}
+    }
+    //======================================================================
+    // MOBILE STUFF
+    //======================================================================
+    @include mobile {
 
-			@if $type-mobile == fadeIn {
-				@include mobile-menu-fadeIn();
-			}
+      //main menu
+      @if $type-mobile == slideIn {
+        @include mobile-menu-slideIn();
+      }
 
+      @if $type-mobile == fadeIn {
+        @include mobile-menu-fadeIn();
+      }
 
-		}
-	}
+      //submenu's
+
+      @if $mobile-submenu-type == slideOver {
+        @include mobile-submenu-slideOver();
+      }
+    }
+  }
 }

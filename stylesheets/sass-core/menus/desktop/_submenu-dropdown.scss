@@ -1,8 +1,8 @@
-@mixin submenu-dropdown($selector:"ul ul, .submenu, .sub-menu"){
+@mixin submenu-dropdown($selector:".sub-menu"){
 
 	#{$selector} {
 		margin-top:10px;
-		visibility:none;
+		visibility:hidden;
 		opacity:0;
 		width:300px;
 		position: absolute;
