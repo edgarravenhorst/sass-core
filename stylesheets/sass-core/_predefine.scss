@@ -190,6 +190,7 @@ form {
   outline: 0;
   text-align: center;
   text-decoration:none;
+	line-height: $button_line_height;
 
   &:hover{
     background: $button_hover_bg_color;
