@@ -8,7 +8,7 @@
 
 @import "mobile/submenu-slideover";
 
-@mixin wp-core-menu ($selector: "header nav", $type:basic, $submenu-type:dropdown, $type-mobile:slideIn, $mobile-submenu-type:slideOver) {
+@mixin wp-core-menu ($selector: "header nav", $type:basic, $submenu-type:dropdown, $type-mobile:slideIn, $mobile-submenu-type:slideOver, $mobile-breakpoint:$tablet-width) {
 
   #{$selector} {
     margin:0;
@@ -55,9 +55,11 @@
     //======================================================================
     // MOBILE STUFF
     //======================================================================
-    @include mobile {
 
+
+    @media (max-width:$mobile-breakpoint ){
       //main menu
+      //-----------------------
       @if $type-mobile == slideIn {
         @include mobile-menu-slideIn();
       }
@@ -67,10 +69,11 @@
       }
 
       //submenu's
-
+      //-----------------------
       @if $mobile-submenu-type == slideOver {
         @include mobile-submenu-slideOver();
       }
     }
   }
 }
+
